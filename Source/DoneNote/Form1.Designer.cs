@@ -43,6 +43,7 @@
             this.centerUserControl1.Name = "centerUserControl1";
             this.centerUserControl1.Size = new System.Drawing.Size(284, 231);
             this.centerUserControl1.TabIndex = 0;
+            this.centerUserControl1.TextBoxText = "";
             // 
             // topUserControl1
             // 
@@ -77,9 +78,11 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.centerPanel);
             this.Controls.Add(this.topPanel);
+            this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ドーンノート";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.topPanel.ResumeLayout(false);
             this.centerPanel.ResumeLayout(false);
             this.ResumeLayout(false);

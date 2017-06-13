@@ -1,6 +1,6 @@
 ﻿namespace DoneNote
 {
-    partial class TopUserControl
+    partial class CenterUserControl
     {
         /// <summary> 
         /// 必要なデザイナー変数です。
@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // saveButton
+            // textBox1
             // 
-            this.saveButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.saveButton.Location = new System.Drawing.Point(0, 0);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(50, 30);
-            this.saveButton.TabIndex = 0;
-            this.saveButton.Text = "保存";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.textBox1.AcceptsTab = true;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(391, 365);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // TopUserControl
+            // CenterUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.saveButton);
-            this.Name = "TopUserControl";
-            this.Size = new System.Drawing.Size(50, 30);
+            this.Controls.Add(this.textBox1);
+            this.Name = "CenterUserControl";
+            this.Size = new System.Drawing.Size(391, 365);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

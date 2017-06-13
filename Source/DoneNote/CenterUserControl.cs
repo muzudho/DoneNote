@@ -7,25 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace DoneNote
 {
-    public partial class TopUserControl : UserControl
+    public partial class CenterUserControl : UserControl
     {
-        public TopUserControl()
+        public CenterUserControl()
         {
             InitializeComponent();
         }
 
+        public string TextBoxText
+        {
+            get { return textBox1.Text; }
+            set { textBox1.Text = value; }
+        }
+
         /// <summary>
-        /// [保存]ボタン
+        /// テキストを編集した場合
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void saveButton_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            File.WriteAllText(Form1.TEXT_FILE, ((Form1)ParentForm).TextBoxText);
+            ((Form1)ParentForm).Editing = true;
         }
     }
 }
