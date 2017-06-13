@@ -57,7 +57,7 @@ namespace DoneNote
         private void timeButton_Click(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
-            ((Form1)ParentForm).TextBoxText += string.Format("{0}{1}:{2}{3}",Environment.NewLine, dt.Hour, dt.Minute, Environment.NewLine);
+            ((Form1)ParentForm).TextBoxText += string.Format("{0}{1:D2}:{2:D2}{3}",Environment.NewLine, dt.Hour, dt.Minute, Environment.NewLine);
         }
 
         /// <summary>
