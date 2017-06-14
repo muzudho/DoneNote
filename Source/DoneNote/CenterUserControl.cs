@@ -17,11 +17,33 @@ namespace DoneNote
             InitializeComponent();
         }
 
+        #region テキストボックス
         public string TextBoxText
         {
             get { return textBox1.Text; }
             set { textBox1.Text = value; }
         }
+
+        /// <summary>
+        /// 出典:「TextBox（またはRichTextBox）の現在のカレット位置（行と列）を取得する」http://dobon.net/vb/dotnet/control/tbgetcaretposition.html
+        /// </summary>
+        public int CaretPosition
+        {
+            get
+            {
+                return textBox1.SelectionStart;
+            }
+            set
+            {
+                textBox1.SelectionStart = value;
+            }
+        }
+
+        public void FocusTextBox()
+        {
+            textBox1.Focus();
+        }
+        #endregion
 
         /// <summary>
         /// テキストを編集した場合

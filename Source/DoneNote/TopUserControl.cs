@@ -56,8 +56,16 @@ namespace DoneNote
         /// <param name="e"></param>
         private void timeButton_Click(object sender, EventArgs e)
         {
+            Form1 form1 = (Form1)ParentForm;
+            int oldCaret = form1.CaretPosition;
+
             DateTime dt = DateTime.Now;
-            ((Form1)ParentForm).TextBoxText += string.Format("{0}{1:D2}:{2:D2}{3}",Environment.NewLine, dt.Hour, dt.Minute, Environment.NewLine);
+            string entry = string.Format("{0}{1:D2}:{2:D2}{3}", Environment.NewLine, dt.Hour, dt.Minute, Environment.NewLine);
+            form1.TextBoxText += entry;
+            form1.FocusTextBox();
+
+            // 2つずれてたので足した
+            form1.CaretPosition = oldCaret + entry.Length + 2;
         }
 
         /// <summary>
@@ -67,8 +75,16 @@ namespace DoneNote
         /// <param name="e"></param>
         private void dateButton_Click(object sender, EventArgs e)
         {
+            Form1 form1 = (Form1)ParentForm;
+            int oldCaret = form1.CaretPosition;
+
             DateTime dt = DateTime.Now;
-            ((Form1)ParentForm).TextBoxText += string.Format("{0}{1:D4}-{2:D2}-{3:D2}{4}", Environment.NewLine, dt.Year, dt.Month, dt.Day, Environment.NewLine);
+            string entry = string.Format("{0}{1:D4}-{2:D2}-{3:D2}{4}", Environment.NewLine, dt.Year, dt.Month, dt.Day, Environment.NewLine);
+            form1.TextBoxText += entry;
+            form1.FocusTextBox();
+
+            // 2つずれてたので足した
+            form1.CaretPosition = oldCaret + entry.Length + 2;
         }
     }
 }

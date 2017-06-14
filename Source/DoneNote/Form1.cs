@@ -55,6 +55,7 @@ namespace DoneNote
             }
         }
 
+        #region テキストボックス
         public string TextBoxText
         {
             get
@@ -66,6 +67,24 @@ namespace DoneNote
                 ((CenterUserControl)centerPanel.Controls["centerUserControl1"]).TextBoxText = value;
             }
         }
+
+        public int CaretPosition
+        {
+            get
+            {
+                return ((CenterUserControl)centerPanel.Controls["centerUserControl1"]).CaretPosition;
+            }
+            set
+            {
+                ((CenterUserControl)centerPanel.Controls["centerUserControl1"]).CaretPosition = value;
+            }
+        }
+
+        public void FocusTextBox()
+        {
+            ((CenterUserControl)centerPanel.Controls["centerUserControl1"]).Focus();
+        }
+        #endregion
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
