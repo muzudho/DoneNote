@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
+using System.Text;
 
 namespace DoneNote
 {
@@ -49,6 +44,18 @@ namespace DoneNote
             Save();
         }
 
+        static string Insert(string text, int index, string appends)
+        {
+            string pre = text.Substring(0, index);
+            string epi = text.Substring(index);
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append(pre);
+            sb.Append(appends);
+            sb.Append(epi);
+            return sb.ToString();
+        }
+
         /// <summary>
         /// [時分]ボタン
         /// </summary>
@@ -59,13 +66,15 @@ namespace DoneNote
             Form1 form1 = (Form1)ParentForm;
             int oldCaret = form1.CaretPosition;
 
+            // 書き足す文字
             DateTime dt = DateTime.Now;
-            string entry = string.Format("{0}{1:D2}:{2:D2}{3}", Environment.NewLine, dt.Hour, dt.Minute, Environment.NewLine);
-            form1.TextBoxText += entry;
-            form1.FocusTextBox();
+            string appends = string.Format("{0}{1:D2}:{2:D2}{3}", Environment.NewLine, dt.Hour, dt.Minute, Environment.NewLine);
+            // 挿入
+            form1.TextBoxText = Insert(form1.TextBoxText, oldCaret, appends);
 
             // 2つずれてたので足した
-            form1.CaretPosition = oldCaret + entry.Length + 2;
+            form1.CaretPosition = oldCaret + appends.Length + 2;
+            form1.FocusTextBox();
         }
 
         /// <summary>
@@ -78,13 +87,16 @@ namespace DoneNote
             Form1 form1 = (Form1)ParentForm;
             int oldCaret = form1.CaretPosition;
 
+            // 書き足す文字
             DateTime dt = DateTime.Now;
-            string entry = string.Format("{0}{1:D4}-{2:D2}-{3:D2}{4}", Environment.NewLine, dt.Year, dt.Month, dt.Day, Environment.NewLine);
-            form1.TextBoxText += entry;
-            form1.FocusTextBox();
+            string appends = string.Format("{0}{1:D4}-{2:D2}-{3:D2}{4}", Environment.NewLine, dt.Year, dt.Month, dt.Day, Environment.NewLine);
+
+            // 挿入
+            form1.TextBoxText = Insert(form1.TextBoxText, oldCaret, appends);
 
             // 2つずれてたので足した
-            form1.CaretPosition = oldCaret + entry.Length + 2;
+            form1.CaretPosition = oldCaret + appends.Length + 2;
+            form1.FocusTextBox();
         }
     }
 }
