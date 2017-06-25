@@ -39,8 +39,9 @@ namespace DoneNote
             }
         }
 
-        public void FocusTextBox()
+        public void FocusToCaret()
         {
+            textBox1.ScrollToCaret();
             textBox1.Focus();
         }
         #endregion
@@ -50,7 +51,7 @@ namespace DoneNote
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             ((Form1)ParentForm).Editing = true;
         }

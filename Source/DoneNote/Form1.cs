@@ -80,9 +80,9 @@ namespace DoneNote
             }
         }
 
-        public void FocusTextBox()
+        public void FocusToCaret()
         {
-            ((CenterUserControl)centerPanel.Controls["centerUserControl1"]).Focus();
+            ((CenterUserControl)centerPanel.Controls["centerUserControl1"]).FocusToCaret();
         }
         #endregion
 

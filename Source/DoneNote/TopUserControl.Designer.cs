@@ -43,7 +43,7 @@
             this.saveButton.TabIndex = 0;
             this.saveButton.Text = "保存";
             this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // timeButton
             // 
@@ -53,7 +53,7 @@
             this.timeButton.TabIndex = 1;
             this.timeButton.Text = "時分";
             this.timeButton.UseVisualStyleBackColor = true;
-            this.timeButton.Click += new System.EventHandler(this.timeButton_Click);
+            this.timeButton.Click += new System.EventHandler(this.TimeButton_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -74,7 +74,7 @@
             this.dateButton.TabIndex = 2;
             this.dateButton.Text = "年月日";
             this.dateButton.UseVisualStyleBackColor = true;
-            this.dateButton.Click += new System.EventHandler(this.dateButton_Click);
+            this.dateButton.Click += new System.EventHandler(this.DateButton_Click);
             // 
             // TopUserControl
             // 

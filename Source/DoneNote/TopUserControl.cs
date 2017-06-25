@@ -39,7 +39,7 @@ namespace DoneNote
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void saveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             Save();
         }
@@ -61,7 +61,7 @@ namespace DoneNote
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timeButton_Click(object sender, EventArgs e)
+        private void TimeButton_Click(object sender, EventArgs e)
         {
             Form1 form1 = (Form1)ParentForm;
             int oldCaret = form1.CaretPosition;
@@ -74,7 +74,7 @@ namespace DoneNote
 
             // 2つずれてたので足した
             form1.CaretPosition = oldCaret + appends.Length + 2;
-            form1.FocusTextBox();
+            form1.FocusToCaret();
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace DoneNote
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dateButton_Click(object sender, EventArgs e)
+        private void DateButton_Click(object sender, EventArgs e)
         {
             Form1 form1 = (Form1)ParentForm;
             int oldCaret = form1.CaretPosition;
@@ -96,7 +96,7 @@ namespace DoneNote
 
             // 2つずれてたので足した
             form1.CaretPosition = oldCaret + appends.Length + 2;
-            form1.FocusTextBox();
+            form1.FocusToCaret();
         }
     }
 }
